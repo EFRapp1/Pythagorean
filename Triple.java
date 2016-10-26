@@ -34,7 +34,7 @@ public static String Finder(int length)
 			SideC = java.lang.Math.sqrt(Csquared);	// find the square root
 			if (SideC == Math.floor(SideC) )	//Checking if C is an integer!
 			{	
-				Counter = Counter++;
+				Counter++;
 				Buffer = Buffer + SideA;
 				Buffer = Buffer + ", ";
 				Buffer = Buffer + SideB;
@@ -44,10 +44,10 @@ public static String Finder(int length)
 			}
 			ii=ii+1;	// increment for the loop used for SideB
 	}
-	ii=1;	//reset i for the next loop iteration of i
+	ii=1;	//reset ii for the next loop iteration of i
 	i=i+1;	//increment for while loop used for SideA
-	
 }
+
 Count = Counter; // update the Count variable so it can be used in the output
 return Buffer; // return the results
 }
