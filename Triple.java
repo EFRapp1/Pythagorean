@@ -14,9 +14,7 @@ public static void main(String[] args) {
 
 public static String Finder(int length)
 {
-
 	// declare method variables.  we will need integer variables to hold values of each side
-	
 	int SideA;
 	int SideB;
 	double SideC;
@@ -26,10 +24,10 @@ public static String Finder(int length)
 	String Buffer = "";
 	int Counter=0;
 
-	while(i < length)
+	while(i <= length)
 	{
 		SideA = i;
-		while(ii < length)
+		while(ii <= i) // note the condition in the while loop removes duplicate combinations
 		{
 			SideB = ii;
 			Csquared = (SideA*SideA) + (SideB*SideB);  // determine value of C squared
