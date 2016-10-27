@@ -13,6 +13,8 @@ public static void main(String[] args)
 	int returnCode = OutputFormatter(Result, startTime);
 }
 
+//The Finder method will use a nested while loop to test combinations of side A and B
+//to find Pythagorean triples (where side C is an integer)
 public static StringBuilder Finder(int length)
 {
 	// declare method variables.  we will need integer variables to hold values of each side
@@ -26,10 +28,14 @@ public static StringBuilder Finder(int length)
 	StringBuilder buffer = new StringBuilder();
 	int counter=0;
 
+	// the first while loop is used to test each value of side A
 	while(i <= length)
 	{
 		sideA = i;
-		while(ii <= i) // note the condition in the while loop removes duplicate combinations
+		//The second while loop is used to test values of side B for each value of side A
+		// note the condition in this 2nd while loop removes duplicate combinations
+		// by only testing side lengths of B that are equal to or less than side A
+		while(ii <= i) 
 		{
 			sideB = ii;
 			cSquared = (sideA*sideA) + (sideB*sideB);  // determine value of C squared
