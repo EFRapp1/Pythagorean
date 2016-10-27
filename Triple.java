@@ -6,13 +6,14 @@ static int sides = 100;
 static int count = 0;
 
 //The main program will trap the start time, find the triples, and format the output
-public static void main(String[] args) {
+public static void main(String[] args) 
+{
 	long startTime = System.currentTimeMillis();
-	String Result = Finder(sides);
+	StringBuilder Result = Finder(sides);
 	int returnCode = OutputFormatter(Result, startTime);
 }
 
-public static String Finder(int length)
+public static StringBuilder Finder(int length)
 {
 	// declare method variables.  we will need integer variables to hold values of each side
 	int sideA;
@@ -21,7 +22,8 @@ public static String Finder(int length)
 	int cSquared;
 	int i=1;
 	int ii=1;
-	String buffer = "";
+	String initial="";
+	StringBuilder buffer = new StringBuilder();
 	int counter=0;
 
 	while(i <= length)
@@ -35,26 +37,25 @@ public static String Finder(int length)
 			if (sideC == Math.floor(sideC) )	//Checking if C is an integer!
 			{	
 				counter++;
-				buffer = buffer + sideA;
-				buffer = buffer + ", ";
-				buffer = buffer + sideB;
-				buffer = buffer + ", ";
-				buffer = buffer + java.lang.Math.round(sideC);
-				buffer = buffer + " \n";		
+				buffer.append(sideA);
+				buffer.append(", ");
+				buffer.append(sideB);
+				buffer.append(", ");
+				buffer.append(java.lang.Math.round(sideC));
+				buffer.append("\n");
+				
 			}
 			ii=ii+1;	// increment for the loop used for SideB
 	}
 	ii=1;	//reset ii for the next loop iteration of i
 	i=i+1;	//increment for while loop used for SideA
 }
-
 count = counter; // update the Count variable so it can be used in the output
 return buffer; // return the results
 }
 
-
-public static int OutputFormatter(String output, long time){
-	
+public static int OutputFormatter(StringBuilder output, long time)
+{
 	String intro ="";
 	intro = intro + "There are ";
 	intro = intro + count;
