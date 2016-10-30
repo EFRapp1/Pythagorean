@@ -1,5 +1,7 @@
 package com.example;
 
+// The Triple Class will find every Pythagorean Triple for the range of side lengths 
+// set in static variable sides.
 public class Triple {
 	
 static int sides = 100;
@@ -54,7 +56,8 @@ count = counter; // update the Count variable so it can be used in the output
 return buffer; // return the results
 }
 
-// The UpdateBuffer method adds each Pythagorean Triple to a buffer that will be output
+// The UpdateBuffer method adds each Pythagorean Triple to a buffer that will be output later
+// by the OutputFormatter method
 public static StringBuilder UpdateBuffer(int a, int b, double c, StringBuilder s)
 {
 	s.append(a);
@@ -80,7 +83,7 @@ public static void OutputFormatter(StringBuilder output, long time)
 	System.out.println(screenOutput);
 }
 
-// The PerfResult method calculates the total run time and outputs it to the screen
+// The PerfResult method calculates the total run time and outputs it to the console
 public static void PerfResult(long start)
 {
 	System.out.println("Total Run Time in milliseconds = ");
